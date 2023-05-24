@@ -1,0 +1,14 @@
+#!/bin/bash
+select BOX in `ls ~/Boxes/` no
+do
+	if [[ $BOX == "no" ]];
+	then
+		echo bye^^
+		exit
+	else
+		cd ~/Boxes/$BOX
+		vagrant up
+		vagrant ssh
+		exit
+	fi
+done
